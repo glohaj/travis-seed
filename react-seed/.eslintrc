@@ -1,0 +1,12 @@
+{
+    "extends": "standard",
+    "plugins": [
+        "standard",
+        "promise",
+		"react"
+    ],
+	"rules": {
+		"react/jsx-uses-vars": 1,
+		"no-warning-comments": 0
+	}
+}
