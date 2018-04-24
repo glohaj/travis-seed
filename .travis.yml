@@ -12,9 +12,19 @@ env:
     - DOCKER_IMAGE_NAME="test-play-framework"
     - K8S_DEPLOYMENT_NAME="test-app"
     - NODE_ENV = production
+before_install:
+    - nvm install 6.11.0
+    - npm i -g npm@3.10.10
+install:
+    - cd react-seed && npm install
+    - cd ../play-seed && sbt compile
 before_script:
     - docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
     - docker pull smesch/kubectl
+script:
+    - cd ../react-seed && npm run build
+    - cd ../play-seed && sbt dist
+    - cd ..
 after_script:
     - docker build -t ${DOCKER_USERNAME}/${DOCKER_IMAGE_NAME}:${TRAVIS_BUILD_ID} .
     - docker push ${DOCKER_USERNAME}/${DOCKER_IMAGE_NAME}:${TRAVIS_BUILD_ID}
