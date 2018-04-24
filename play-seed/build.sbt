@@ -19,9 +19,7 @@ scalaVersion := "2.11.11"
 
 libraryDependencies ++= Seq(
   javaWs,
-  jdbc,
-  cache,
-  filters
+  jdbc
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"

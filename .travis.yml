@@ -19,6 +19,7 @@ install:
   - cd ../play-seed && sbt compile
 before_script:
     - docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
+    - docker pull smesch/kubectl
 script:
   - cd ../react-seed && npm run build
   - cd ../play-seed && sbt dist
