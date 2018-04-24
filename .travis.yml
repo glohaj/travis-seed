@@ -2,15 +2,14 @@ language: scala
 scala:
    - 2.11.11
 before_install:
-  - nvm ls-remote
   - nvm install 6.11.0
   - npm i -g npm@3.10.10
 install:
   - cd react-seed && npm install
-  - cd .. && play-seed && sbt compile
+  - cd ../play-seed && sbt compile
 script:
-  - cd .. && react-seed && npm run build
-  - cd .. && play-seed && sbt dist
+  - cd ../react-seed && npm run build
+  - cd ../play-seed && sbt dist
 cache:
   directories:
     - /react-seed/node_modules
