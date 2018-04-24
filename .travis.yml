@@ -3,11 +3,10 @@ node_js:
   - "iojs"
   - "6.11.0"
 before_install:
+  - cd react-seed
   - npm i -g npm@3.10.10
 install:
   - npm install
-before_script: 
-  - cd project
 script:
   - npm run build
 cache:
