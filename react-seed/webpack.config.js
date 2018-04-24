@@ -1,7 +1,7 @@
 var webpack = require('webpack')
 var path = require('path')
 
-var BUILD_DIR = path.resolve(__dirname, './build/')
+var BUILD_DIR = path.resolve(__dirname, '../play-seed/public/build/')
 var APP_DIR = path.resolve(__dirname, 'app')
 
 var BUILD_ENV = process.env.NODE_ENV || 'development'
