@@ -1,15 +1,15 @@
-language: node_js
-node_js:
-  - "iojs"
-  - "6.11.0"
-cache: react-seed
+language: scala
+scala:
+   - 2.11.11
 before_install:
-  - cd react-seed
+  - nvm install node@6.11.0
   - npm i -g npm@3.10.10
 install:
-  - npm install
+  - cd react-seed && npm install
+  - cd play-seed && sbt compile
 script:
-  - npm run build
+  - cd react-seed && npm run build
+  - cd play-seed && sbt dist
 cache:
   directories:
     - /react-seed/node_modules

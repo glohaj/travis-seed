@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Map static resources from the /public folder to the /assets URL path
+GET           /assets/*file                        controllers.Assets.at(path="/public", file)
+GET           /fonts/*file                         controllers.Assets.at(path="/public/build/fonts", file)
+GET           /images/*file                        controllers.Assets.at(path="/public/build/images", file)
+GET           /data/maps/*file                     controllers.Assets.at(path="/public/build/data/maps", file)
+GET           /data/*file                     	   controllers.Assets.at(path="/public/build/data", file)
+GET           /favicon.png                         controllers.Assets.at(path="/public/images", file="favicon.png")
+
+#Dashboard API
+GET           /                                    @controllers.Application.dashboards
+

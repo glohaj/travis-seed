@@ -1,0 +1,23 @@
+@import play.api.Configuration
+@import scala.Option.empty
+@(config: Configuration = null)
+<!DOCTYPE html>
+
+<html lang="en" ng-app="opToolApp">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="@routes.Assets.at("/public", "build/images/favicon.png")">
+	    <title>PLAY-SEED</title>
+	</head>
+	<body>
+		<div id="container">
+      </div>
+	</body>
+
+	<script src="@routes.Assets.at("/public", "../react-seed/build/bundle.js")"></script>
+</html>

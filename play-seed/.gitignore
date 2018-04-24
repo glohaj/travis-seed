@@ -1,0 +1,11 @@
+/public/build/*
+!/public/build/data/
+!/public/build/data-service-worker-v2.js
+!/public/build/index.html
+!/public/build/images
+
+/target
+/project/target
+/project/project
+
+!**/.project
