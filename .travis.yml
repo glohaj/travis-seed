@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - "iojs"
   - "6.11.0"
+cache: react-seed
 before_install:
   - cd react-seed
   - npm i -g npm@3.10.10
@@ -11,7 +12,7 @@ script:
   - npm run build
 cache:
   directories:
-    - "node_modules"
+    - /react-seed/node_modules
 env:
   global:
   - NODE_ENV = production
