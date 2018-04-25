@@ -20,15 +20,15 @@ COPY . $PROJECT_HOME/app
 EXPOSE 9000
 # Expose this port if you want to enable remote debugging: 5005
 
-# WORKDIR $PROJECT_HOME/app/play-seed
+WORKDIR $PROJECT_HOME/app/play-seed
 
 # Unzip the package
-# RUN unzip target/universal/$APP_NAME-$APP_VERSION.zip
+RUN unzip target/universal/$APP_NAME-$APP_VERSION.zip
 
 # Update permissions
-# RUN chmod +x $APP_NAME-$APP_VERSION/bin/$APP_NAME
+RUN chmod +x $APP_NAME-$APP_VERSION/bin/$APP_NAME
 
-# WORKDIR $APP_NAME-$APP_VERSION
+WORKDIR $APP_NAME-$APP_VERSION
 # This will run at start, it points to the .sh file in the bin directory to start the play app
-# ENTRYPOINT bin/$APP_NAME
+ENTRYPOINT bin/$APP_NAME
 # Add this arg to the script if you want to enable remote debugging: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
